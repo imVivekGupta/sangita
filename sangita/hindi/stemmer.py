@@ -27,7 +27,7 @@ def stemmer(string, min_count):
     
     if isinstance(string, str):
         words = tok.wordtokenize(string)
-        for index,item in words:
+        for index,item in enumerate(words):
             temp = []
             for inflection in inflections:
                 temp.append(endsplit(item, inflection))
@@ -35,4 +35,5 @@ def stemmer(string, min_count):
             words[index] = ((temp))
             minlength = min(len(s) for s in stringlist)
             return minlength
-        
+    
+stemmer('Hey my name is Keviv',2)        
